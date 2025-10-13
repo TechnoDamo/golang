@@ -1,3 +1,6 @@
+<img src="https://github.com/TechnoDamo/golang/blob/main/img/mascot.png" 
+     alt="Cool banner of the Golang mascot" 
+     style="width: 150%; height: 150%;" />
 # golang notes
 ### Introduction
 Golang is a general-purpose programming language.
