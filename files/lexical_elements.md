@@ -1,9 +1,9 @@
 # Comments
-// - singli line comment
-/* ... */ - multiline comment
+// - single line comment <br>
+/* ... */ - multiline comment <br>
 
 # Tokens
-Tokens form the vocabulary of the Go language.
+Tokens form the vocabulary of the Go language. <br>
 There are four classes:
 - identifiers
 - keywords
@@ -26,12 +26,12 @@ if x > 0 { return x }; return y
 ```
 
 # Identifiers
-Identifier - a saquence of one or more letters/digits (first char is a letter) for naming program entities such as variables, types etc.
+Identifier is a saquence of one or more letters/digits *(first char is a letter)* for naming program entities such as variables, types etc.
 
 Some identifiers are predeclared.
 
 # Keywords
-The follwing keywords are reserved and may not be used as identifiers.
+The following keywords are reserved and may not be used as identifiers.
 ```go
 break        default      func         interface    select
 case         defer        go           map          struct

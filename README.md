@@ -4,9 +4,9 @@
 # golang notes
 
 ### Introduction
-Golang is a general-purpose programming language.
-It is strongly typed and garbage-collected, has explicit support for concurrent programming.
-Programs are constructed from *packages*, whose properties allow efficient management of dependencies.
+Golang is a general-purpose programming language. <br>
+It is strongly typed and garbage-collected, has explicit support for concurrent programming. <br>
+Programs are constructed from *packages*, whose properties allow efficient management of dependencies. <br>
 ### Notation
 ### Source code representation
 -  Charachters 
