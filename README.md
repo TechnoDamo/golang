@@ -12,21 +12,21 @@ Programs are constructed from *packages*, whose properties allow efficient manag
 -  Charachters 
 -  Letters and Digits
 
-### Lexical elements
+### [Lexical elements](./files/lexical_elements.md)
 <details>
 <summary>expand</summary>
 
--  Comments
--  Tokents
--  Semicolons
--  Identifiers
--  Keywords
--  Operators and puncuation
--  Integer literals
--  Floating-point literals
--  Imaginary literals
--  Rune literals
--  String literals
+-  [Comments](./files/lexical_elements.md#comments)
+-  [Tokents](./files/lexical_elements.md#tokens)
+-  [Semicolons](./files/lexical_elements.md#semicolons)
+-  [Identifiers](./files/lexical_elements.md#identifiers)
+-  [Keywords](./files/lexical_elements.md#keywords)
+-  [Operators and puncuation](./files/lexical_elements.md#operators-and-punctutation)
+-  [Integer literals](./files/lexical_elements.md#integer-literals)
+-  [Floating-point literals](./files/lexical_elements.md#floating-point-literals)
+-  [Imaginary literals](./files/lexical_elements.md#imaginary-literals)
+-  [Rune literals](./files/lexical_elements.md#rune-literals)
+-  [String literals](./files/lexical_elements.md#string-literals)
 </details>
 
 ### Constants
