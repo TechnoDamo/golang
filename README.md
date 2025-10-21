@@ -29,14 +29,14 @@ Programs are constructed from *packages*, whose properties allow efficient manag
 -  [String literals](./files/lexical_elements.md#string-literals)
 </details>
 
-### Constants
-### Variables
+### [Constants](./files/constants.md)
+### [Variables](./files/variables.md)
 ### Types
 <details>
 <summary>expand</summary>
 
--  Boolean types
--  Numeric types
+-  [Boolean types](./files/types.md#boolean)
+-  [Numeric types](./files/types.md#numeric)
 -  String types
 -  Array types
 -  Slice types
