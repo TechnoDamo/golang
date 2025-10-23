@@ -37,11 +37,45 @@ uintptr  // an unsigned integer large enough to store the uninterpreted bits of 
 ```
 
 # String 
+A *string* type represents the set of string values. <br/>
+A *string value* is a (possibly empty) sequence of bytes. <br/> 
+*Length of a string* equal to the amount of bytes. <br/>
+Strings in Go are *immutable*. Hence &s[i] is invalid.
+
 
 # Array
-
+An *array* is a numbered sequence of elements of a single type, called the element type. 
+Array types are always one-dimentional but may be composed to form multi-dimensional types.
+```go
+[32]byte
+[2*N] struct { x, y int32 }
+[1000]*float64
+[3][5]int
+[2][2][2]float64  // same as [2]([2]([2]float64))
+```
 # Slice 
+A *slice* is a descriptor for a contiguous segment of n *underlying array* and provides access to a numbered sequence of elements from that array. <br/>
 
+A slice, once initialized, is always assosiated with an underlying array that holds its elements and therefore shares its storage. <br/>
+
+Length and capacity of a slice: <br/>
+```go
+arr := [6]int{1, 2, 3, 4, 5, 6}
+slice := arr[1:4]  // [2, 3, 4]
+
+fmt.Println(len(slice)) // 3 - elements currently in slice
+fmt.Println(cap(slice)) // 5 - from position 1 to end of array
+```
+
+We can also create slice with the following syntax: <br/>
+```go
+make([]T, length, capacity)
+```
+which is equivalent to: <br/>
+```go
+make([]int, 50, 100)
+new([100]int)[0:50]
+```
 # Struct 
 
 # Pointer 

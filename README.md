@@ -31,7 +31,7 @@ Programs are constructed from *packages*, whose properties allow efficient manag
 
 ### [Constants](./files/constants.md)
 ### [Variables](./files/variables.md)
-### Types
+### [Types](./files/types.md)
 <details>
 <summary>expand</summary>
 
