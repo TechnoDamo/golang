@@ -77,12 +77,73 @@ make([]int, 50, 100)
 new([100]int)[0:50]
 ```
 # Struct 
+A struct is a sequence of named elements, called **fields**, each of which has a *name* and a *type*. <br/>
+Field names may be specified **explicitly** (*IdentifierList*) or **impicitly** (*EmbeddedField*). <br/>
+When we embed one struct into another, fields of the embedded struct become **promoted**, meaning we can access them directly from the outer struct. 
+```go
+// explicit spec
+type Person struct {
+    Name    string  // Explicit field name "Name"
+    Age     int     // Explicit field name "Age"  
+    Address string  // Explicit field name "Address"
+    _ string - used for padding
+}
+// implicit spec
+type Address struct {
+    Street  string
+    City    string
+}
+
+type Person struct {
+    string  // Implicit field name: "string"
+    int     // Implicit field name: "int" 
+    Address // Implicit field name: "Address" (embedded struct)
+}
+
+p := Person{
+    string: "John",  // Using implicit field name
+    int:    30,
+    Address: Address{...},
+}
+fmt.Println(p.string)  // Access via implicit name
+fmt.Println(p.City)    // Promoted field from embedded Address
+```
 
 # Pointer 
+A *pointer type* denotes the set of all pointers to variables of a given type (*base type*).<br/>
+The value of an unitialized pointer is **nil**. <br/>
+
+The type ***\*int*** represents all possible memory addresses that could point to integer variables. <br/>
+For **\*int** the *base type* is **int**, the type pointed to.
 
 # Function 
+A *function type* denotes the set of all functions with the same parameter and result types. <br/>
+The value of an uniniiaized variable of function type is nil. <br/>
 
-# Inerface
+Within a list of parameters or results, the names (IdentifierList) must either all be present or all be absent. <br/>
+If *present*, all non-blank values in the signature must be unique. If absent - each type stands for one item of that type.<br/> 
+
+The final incoming parameter in a function signature may have a type prefixed with .... A function with such a parameter is called **variadic** and may be invoked with zero or more arguments for that parameter. 
+```go
+func()
+func(x int) int
+func(a, _ int, z float32) bool
+func(a, b int, z float32) (bool)
+func(prefix string, values ...int)
+func(a, b int, z float64, opt ...interface{}) (success bool) // vardiac
+func(int, int, float64) (float64, *[]int)
+func(n int) func(p *T)
+```
+
+# Interface
+An interface type defines a *type set*. <br/>
+A variable of interface type can store a value of any type from that *type set*. <br/> 
+Types from the *type set* are said to **implement the interface**.
+
+
+## Basic interfaces
+## Embedded interfaces
+## General interfaces
 
 # Map
 
