@@ -139,6 +139,7 @@ func(n int) func(p *T)
 An interface type defines a *type set*. <br/>
 A variable of interface type can store a value of any type from that *type set*. <br/> 
 Types from the *type set* are said to **implement the interface**.
+The value of an unitialized interface is *nil*.
 
 
 ## Basic interfaces
@@ -146,5 +147,45 @@ Types from the *type set* are said to **implement the interface**.
 ## General interfaces
 
 # Map
+A map is an unordered key-value group of elements.
+The value of an uninitialized map is *nil*.
+```ebnf
+MapType = "map" "[" KeyType "]" ElementType .
+```
+
+The *comparison operators* == and != must be fully defined for operands of the key type (so not a function, map or slice), otherwise a runtime panic will be caused.
+
+The number of map elements is called its **length**, and can be discovered with the len() function. 
+```go
+fmt.Println(len(scores)) // Output: 3
+```
+Elements can be added using assignments and retrieved with index expressions.
+```go
+// assignment
+scores["Charlie"] = 92
+// retrieving
+fmt.Println(scores["Alice"]) // Output: 92
+// checking key existense, ok is boolean
+value, ok := scores["Eve"]
+```
+Elements may be removed with **delete** and **clear** functions.
+```go
+// removing a specific key with delete
+delete(scores, "Bob")
+// remove all keys (from Go 1.21)
+clear(scores) 
+```
+
+New map is created with the **make** function.
+```go
+m := make(map[string]int)
+m := make(map[string]int, 100) // just an optimization hint
+// we can also initialise it with values
+scores := map[string]int{
+    "Alice": 95,
+    "Bob":   89,
+    "Eve":   76,
+}
+```
 
 # Channel
