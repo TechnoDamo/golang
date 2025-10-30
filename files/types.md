@@ -189,3 +189,23 @@ scores := map[string]int{
 ```
 
 # Channel
+A channel provides a mechanism for concurrently executing functions to communicate by sending and receiving values of s dpecified element type.
+The value of an uninitialized channel is *nil*.
+```ebnf
+ChannelType = ("chan" | "chan" "<-" | "<-" "chan") ElementType .
+```
+```go
+var ch chan int // bidirectional 
+var sendCh chan<- int // send-only
+var recvCh <-chan int // receive-only
+```
+Bidirectional channel can be converted to directional, but not the other way around.
+
+Channels can be created with the **make** function, which takes channel type and optional capacity.
+```go
+make(chan int) // unbuferized
+make(chan int, 100) // bufferised
+```
+With unbuffered channels, communication succeeds only when both a sender and a receiver are ready.
+With buffered channels, communication succeeds if the buffer is not full.
+*nil* channel is never ready for communication.
