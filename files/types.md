@@ -143,8 +143,38 @@ The value of an unitialized interface is *nil*.
 
 
 ## Basic interfaces
+Interfaces whose type sets can be defined entirely by a list of methods are called *basic interfaces*.
+```go
+// method names cannot be blank
+interface {
+	Read([]byte) (int, error)
+	Write([]byte) (int, error)
+	Close() error
+}
+```
 ## Embedded interfaces
+This is called *embedding interfaces Reader and Writer in ReadWriter*.
+```go
+type Reader interface {
+	Read(p []byte) (n int, err error)
+	Close() error
+}
+
+type Writer interface {
+	Write(p []byte) (n int, err error)
+	Close() error
+}
+
+// ReadWriter's methods are Read, Write, and Close.
+type ReadWriter interface {
+	Reader  // includes methods of Reader in ReadWriter's method set
+	Writer  // includes methods of Writer in ReadWriter's method set
+} 
+```
+When embedding interfaces, methods with the same names must have identical signatures. 
+
 ## General interfaces
+
 
 # Map
 A map is an unordered key-value group of elements.
@@ -189,7 +219,7 @@ scores := map[string]int{
 ```
 
 # Channel
-A channel provides a mechanism for concurrently executing functions to communicate by sending and receiving values of s dpecified element type.
+A channel provides a mechanism for concurrently executing functions to communicate by sending and receiving values of  specified element type.
 The value of an uninitialized channel is *nil*.
 ```ebnf
 ChannelType = ("chan" | "chan" "<-" | "<-" "chan") ElementType .
