@@ -61,10 +61,10 @@ Programs are constructed from *packages*, whose properties allow efficient manag
 </details>
 
 ### Blocks
+Basically anything within the square brackets {}.  
 ### Declarations and Scope
 <details>
 <summary>expand</summary>
-
 -  Label scopes
 -  Blank identifiers
 -  Predeclared identifiers
